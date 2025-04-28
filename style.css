@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    align-items: center;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: #3f5aa1;
+}
+
+.header-items {
+    display: flex;
+    width: 1440px;
+    margin: 0 24px;
+    justify-content: space-between;
+}
+
+header input {
+    align-self:  end;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+header img {
+    height: 100px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 24px;
+    flex-grow: 1;
+    max-width: 1440px;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    height: 300px;
+    width: 180px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: rgba(50, 50, 93, 0.55) 0px 2px 5px -1px, rgba(0, 0, 0, 0.7) 0px 1px 3px -1px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title h3 {
+    margin: 4px 12px;
+    color: rgb(124, 124, 124);
+}
+
+.title h4 {
+    margin: 8px 12px;
+    color: #3f5aa1;
+}
+
+.card img {
+    height: 180px;
+    filter: drop-shadow(5px 7px 10px rgb(71, 71, 71));
+}
+
+.image {
+    display: flex;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+    gap: 12px;
+}
+
+.icons img {
+    height: 36px;
+    filter: drop-shadow(2px 2px 3px rgb(71, 71, 71));
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 24px;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button:hover,
+.button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}

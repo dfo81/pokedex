@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./colors.css">
+  <script src="script.js"></script>
+  <script src="template.js"></script>
 </head>
-<body>
-    
+
+<body onload="loadPokemon(limit)">
+  <header>
+    <div class="header-items">
+      <img src="./img/fontbolt.png" alt="">
+      <input type="text" id="searchInput" placeholder="suche Pokemon..." oninput="liveSearchPokemon()">
+    </div>
+  </header>
+  <main id="content">
+    <!--
+    <div class="card">
+      <div class="title">
+        <h2>#1</h2>
+        <h3>Bulbasaur</h3>
+      </div>
+      <div class="image">
+        <img src="./img/pngimg.com - pokemon_PNG130.png" alt="" />
+      </div>
+      <div class="icons">
+        <img src="./assets/icons/grass.svg" alt="">
+      </div>
+    </div>
+     -->
+
+  </main>
+  <div class="button-container">
+    <button type="button" class="button" onclick="morePokemon()">mehr Pokemon</button>
+  </div>
+  <footer></footer>
 </body>
+
 </html>
