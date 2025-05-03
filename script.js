@@ -43,6 +43,8 @@ async function loadPokemon() {
       console.error(`Fehler bei Pokémon ID ${id}:`, e);
     }
     content.innerHTML += template(myPokemon[myPokemon.length - 1]);
+    console.log();
+    
     }
   document.getElementById('spinner').classList.add('d-none');
   offset += limit;
