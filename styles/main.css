@@ -8,7 +8,7 @@ main {
     justify-content: center;
 }
 
-.card {
+.cards {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -21,29 +21,19 @@ main {
     transition: transform 0.2s;
 }
 
-.card:hover {
+.cards:hover {
     cursor: pointer;
     transform: scale(1.03);
     box-shadow: rgba(50, 50, 93, 0.55) 0px 2px 5px -1px, rgba(0, 0, 0, 0.7) 0px 1px 3px -1px;
 }
 
-.title {
+.titles {
     display: flex;
     justify-content: space-between;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.title h3 {
-    margin: 4px 12px;
-    color: rgb(124, 124, 124);
-}
-
-.title h4 {
-    margin: 8px 12px;
-    color: #3f5aa1;
-}
-
-.card img {
+.cards img {
     height: 180px;
     filter: drop-shadow(5px 7px 10px rgb(71, 71, 71));
 }
