@@ -4,7 +4,7 @@ main {
     gap: 16px;
     margin: 24px;
     flex-grow: 1;
-    max-width: 1440px;
+    max-width: 1600px;
     justify-content: center;
 }
 
