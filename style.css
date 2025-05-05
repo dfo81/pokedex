@@ -5,7 +5,10 @@ body {
     flex-direction: column;
     scroll-behavior: smooth;
     align-items: center;
+}
 
+.overflow {
+  overflow: hidden;
 }
 
 header, footer {
@@ -75,4 +78,16 @@ header img {
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: white; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f5aa1;
 }

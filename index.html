@@ -17,13 +17,21 @@
     <link rel="stylesheet" href="./styles/overlays.css" />
     <link rel="stylesheet" href="./colors.css">
     <script src="./template.js"></script>
+    <script src="./scripts/overlay.js"></script>
   </head>
 
-  <body onload="init()">
-    <div id="spinner" class="spinner">
-      <span id="loader" class="loader"></span>
-    </div>
+  <body id="body" class="overflow" onload="init()" onclick="closeOverlay()">
     <header>
+      <div id="overlay-loader" class="overlay-loader d-none">
+        <span id="loader" class="loader d-none"></span>
+      </div>
+      <div class="overlay" id="overlay">
+        <div class="overlay-content" id="overlayContent">
+          <span class="close-btn" onclick="closeOverlay()">&times;</span>
+          
+          <div id="overlayDetails">Loading...</div>
+        </div>
+      </div>
       <div class="header-items">
         <img src="./img/fontbolt.png" alt="" />
         <input
@@ -34,12 +42,13 @@
         />
       </div>
     </header>
+
+    
+
     <main id="content">
-
-
     </main>
     <div class="button-container">
-      <button type="button" class="button" onclick="init()">
+      <button type="button" class="button" onclick="event.stopPropagation(); init()">
         mehr Pokemon
       </button>
     </div>
