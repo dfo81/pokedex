@@ -13,10 +13,26 @@
   }
 
   .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     width: 480px;
     height: 720px;
     background-color: white;
     border-radius: 12px;
   }
 
-  
+  .profile img {
+    position: absolute;
+    top: 30%;
+    width: 350px;
+    filter: drop-shadow(5px 5px 10px black);
+  }
+
+  .details {
+    height: 300px;
+    border-radius: 12px;
+    width: 100%;
+    background-color: white;
+  }
