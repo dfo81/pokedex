@@ -1,8 +1,3 @@
-let content = document.getElementById('content');
-
-function init() {
-  loadEvolutionChain(56);
-}
 
 async function loadEvolutionChain(pokemonId) {
   const species = await fetchSpecies(pokemonId);
