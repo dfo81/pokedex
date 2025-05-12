@@ -47,7 +47,7 @@
   background-image: url(../img/pokeball_white.png);
   background-repeat: no-repeat;
   background-size: 600px;
-  background-position: 140px 55px;
+  background-position: 135px 55px;
 }
 
 .portrait {
@@ -74,7 +74,7 @@ b {
   justify-content: space-between;
 }
 
-b:hover {
+b:hover, .active {
   cursor: pointer;
   color: rgb(64, 64, 64);
   text-decoration: underline;
@@ -82,12 +82,11 @@ b:hover {
   text-decoration-thickness: 3px;
 }
 
-b:active:hover {
+.active:hover {
   cursor: default;
 }
 
-table,
-th {
+table {
   width: 80%;
   margin: 24px;
 }
@@ -109,7 +108,13 @@ th {
 
 .arrows img {
   height: 36px;
+  cursor: pointer;
   background-color: rgba(255, 255, 255);
   border-radius: 50%;
   padding: 5px;
+  opacity: 0.5;
+}
+
+.arrows img:hover {
+  opacity: 0.75;
 }
