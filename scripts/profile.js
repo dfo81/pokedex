@@ -1,7 +1,6 @@
 
 function getAbout() {
-    document.getElementById('about').classList.add('active');
-    getPokemon(9);
+  getPokemon(9);
 }
 
 
@@ -17,5 +16,4 @@ function getStats() {
     document.getElementById('stats').classList.add('active');
     document.getElementById('evo').classList.remove('active');
     document.getElementById('about').classList.remove('active');
-    document.getElementById('profile-content').innerHTML = renderStats();
 }

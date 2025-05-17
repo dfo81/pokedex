@@ -7,12 +7,7 @@ profile = (p, s) => `
       <h2>${capitalize(p.name)}</h2>
       <h3>#${p.id}</h3>
     </div>
-    <img class="portrait"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-              p.id
-            }.svg"
-            alt=""
-          />
+    <img class="portrait" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt=""/>
     <div class="details">
     <nav>
       <b id="about" onclick="getAbout()" class="active">About</b>
@@ -20,7 +15,7 @@ profile = (p, s) => `
       <b id="stats" onclick="getStats()">Stats</b>
     </nav>
   <div id="profile-content">
-    <table>
+    <table id="about-content">
       <tr>
         <th>Height</th>
           <td>${p.height / 10} m</td>
@@ -31,7 +26,7 @@ profile = (p, s) => `
       </tr>
         <tr>
           <th>Abilities</th>
-            <td>${p.abilities.map((a) => a.ability.name).join(", ")}</td>
+            <td>${p.abilities.map(a => a.ability.name).join(", ")}</td>
         </tr>
         <tr>
           <th>Habitat</th>
@@ -43,6 +38,11 @@ profile = (p, s) => `
         </tr>
       </table>
     </div>
+    <table id="stats-content">
+      <tr>
+        <td>${p.stats.map(s => s.stat.name)}</td>
+      </tr>
+    </table>
       <div class="arrows">
         <img onclick="prevIndex()" src="./assets/icons/links.png" alt="links" />
         <img onclick="nextIndex()" src="./assets/icons/rechts.png" alt="rechts" />
@@ -58,30 +58,3 @@ renderChain = (name, img, showArrow) => `
     <img src="${img}" alt="${name}" />
     <span>${capitalize(name)}</span>
   </div>${showArrow ? "&#10132" : ""}`;
-
-
-  //render stats in to Profile
-  renderStats = () => `
-    <table>
-      <tr>
-        <th>Height</th>
-          <td>${p.height / 10} m</td>
-      </tr>
-      <tr>
-        <th>Weight</th>
-          <td>${p.weight / 10} kg</td>
-      </tr>
-        <tr>
-          <th>Abilities</th>
-            <td>${p.abilities.map((a) => a.ability.name).join(", ")}</td>
-        </tr>
-        <tr>
-          <th>Habitat</th>
-          <td>${s.habitat.name}</td>
-        </tr>
-        <tr>
-          <th>Types</th>
-          <td>${p.types.map(t => t.type.name).join(", ")}</td>
-        </tr>
-      </table>
-  `;
