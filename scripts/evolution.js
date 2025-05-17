@@ -1,10 +1,10 @@
-
-
+// Load Profile 
 async function loadEvolutionChain(id) {
-  const names = await getEvolutionNames(id);
+  let names = await getEvolutionNames(id);
   await renderEvolutionChain(names);
 }
 
+// get Names in the chain of character
 async function getEvolutionNames(id) {
   let species = await fetchJSON(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
   let chain = await fetchJSON(species.evolution_chain.url);
@@ -15,6 +15,7 @@ async function getEvolutionNames(id) {
   return names;
 }
 
+// chain only render function 
 async function renderEvolutionChain(names) {
   let profileContent = document.getElementById('profile-content');
   profileContent.innerHTML = "";  
@@ -24,10 +25,4 @@ async function renderEvolutionChain(names) {
     let isLast = i === names.length - 1;
     profileContent.innerHTML += renderChain(name, data.sprites.other.home.front_default, !isLast);
   }
-}
-
-
-async function fetchJSON(url) {
-  let res = await fetch(url);
-  return res.json();
 }

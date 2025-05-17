@@ -128,12 +128,19 @@ th {
 }
 
 .member {
+  margin-top: 24px;
   display: flex;
   gap: 12px;
   align-items: center;
   flex-direction: column;
+  color: gray;
 }
 
 .member img {
   width: 100px;
+  filter: drop-shadow(5px 5px 5px rgb(80, 80, 80));
+}
+
+.member span {
+  margin-bottom: 12px;
 }
