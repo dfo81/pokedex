@@ -1,46 +1,27 @@
-
-async function loadEvolutionChain(pokemonId) {
-  const species = await fetchSpecies(pokemonId);
-  const evoChainUrl = species.evolution_chain.url;
-  const chainNames = await extractEvolutionNames(evoChainUrl);
-  await renderEvolutionChain(chainNames);
+function getChain(id) {
+  document.getElementById('about').classList.remove('active');
+  document.getElementById('evo').classList.add('active');
+  loadEvolutionChain(id);
 }
 
-async function fetchSpecies(id) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-  return await res.json();
-}
 
-async function extractEvolutionNames(url) {
-  const res = await fetch(url);
-  const evoData = await res.json();
+async function loadEvolutionChain(id) {
+  const species = await fetchJSON(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+  const chain = await fetchJSON(species.evolution_chain.url);
   const names = [];
-
-  let current = evoData.chain;
-  while (current) {
+  for (let current = chain.chain; current; current = current.evolves_to[0]) {
     names.push(current.species.name);
-    current = current.evolves_to[0]; 
   }
-  return names;
-}
-
-async function renderEvolutionChain(names) {
+  const content = document.getElementById('profile-content');
+  content.innerHTML = "";
   for (const name of names) {
-    const img = await fetchPokemonImage(name);
-    content.innerHTML += createChain(name, img);
+    const data = await fetchJSON(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    content.innerHTML += renderChain(name, data.sprites.other.home.front_default);
   }
 }
 
-async function fetchPokemonImage(name) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-  const data = await res.json();
-  return data.sprites.other.home.front_default;
-}
 
-function createChain(name, img) {
-  return `
-    <div class="">
-      <img src="${img}" alt="${name}" />
-      <span>${name}</span>
-    </div>&#10132;`
-};
+async function fetchJSON(url) {
+  const res = await fetch(url);
+  return res.json();
+}

@@ -12,10 +12,11 @@ profile = (p, s) =>`
           />
     <div class="details">
     <nav>
-      <b class="active">About</b>
-      <b>Evolution-Chain</b>
-      <b>Base Stats</b>
+      <b id="about" class="active">About</b>
+      <b id="evo" onclick="getChain(8)">Evolution-Chain</b>
+      <b>Stats</b>
     </nav>
+  <div id="profile-content">
     <table>
       <tr>
         <th>Habitat</th>
@@ -40,6 +41,7 @@ profile = (p, s) =>`
           <th>Ohoaihsdf</th>
         </tr>
       </table>
+    </div>
       <div class="arrows">
         <img onclick="prevIndex()" src="./assets/icons/links.png" alt="links" />
         <img onclick="nextIndex()" src="./assets/icons/rechts.png" alt="rechts" />
@@ -48,3 +50,13 @@ profile = (p, s) =>`
   </div>
 </div>`
 ;
+
+
+
+renderChain = (name, img) => `
+  <div class="chain">
+    <div class="member">
+        <img src="${img}" alt="${name}" />
+        <span>${name}</span>
+    </div>
+  </div>&#10132;`;

@@ -118,3 +118,15 @@ th {
 .arrows img:hover {
   opacity: 0.75;
 }
+
+#profile-content {
+  width: 90%;
+}
+
+.chain {
+  display: flex;
+}
+
+.chain img {
+  height: 150px;
+}
