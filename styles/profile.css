@@ -120,13 +120,20 @@ th {
 }
 
 #profile-content {
-  width: 90%;
-}
-
-.chain {
-  display: flex;
-}
-
-.chain img {
+  width: 85%;
   height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.member img {
+  width: 100px;
 }

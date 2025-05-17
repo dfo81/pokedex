@@ -12,7 +12,7 @@ profile = (p, s) =>`
           />
     <div class="details">
     <nav>
-      <b id="about" class="active">About</b>
+      <b id="about" onclick="getAbout()" class="active">About</b>
       <b id="evo" onclick="getChain(8)">Evolution-Chain</b>
       <b>Stats</b>
     </nav>
@@ -53,10 +53,8 @@ profile = (p, s) =>`
 
 
 
-renderChain = (name, img) => `
-  <div class="chain">
-    <div class="member">
-        <img src="${img}" alt="${name}" />
-        <span>${name}</span>
-    </div>
-  </div>&#10132;`;
+renderChain = (name, img, showArrow) => `
+  <div class="member">
+    <img src="${img}" alt="${name}" />
+    <span>${capitalize(name)}</span>
+  </div>${showArrow ? '&#10132' : ''}`;
