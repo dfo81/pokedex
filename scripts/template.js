@@ -2,7 +2,7 @@
 profile = (p, s) => `
 
 <div class="overlay">
-  <div class="profile green">
+  <div class="profile ${s.color.name}">
     <div class="profile-title">
       <h2>${capitalize(p.name)}</h2>
       <h3>#${p.id}</h3>
@@ -44,7 +44,7 @@ profile = (p, s) => `
       <table id="stats-content" class="d-none">
         <tr>
           <th>${p.stats[0].stat.name}</th>
-            <td><div class="progress" style="width: ${p.stats[0].base_stat}px">${p.stats[0].base_stat}</div></td>
+          <td><div class="progress" style="width: ${p.stats[0].base_stat}px">${p.stats[0].base_stat}</div></td>
         </tr>
         <tr>
           <th>${p.stats[1].stat.name}</th>

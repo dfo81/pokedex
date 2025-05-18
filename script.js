@@ -1,9 +1,9 @@
 let content = document.getElementById("content");
 let statsContent = document.getElementById('stats-content');
+let id = 1;
 
-
-function init() {
-  getPokemon(5);
+async function init() {
+  await getPokemon(id);
 }
 
 
