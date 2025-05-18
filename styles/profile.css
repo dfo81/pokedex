@@ -14,7 +14,6 @@
 
 .profile {
   position: relative;
-  font-family: sansation;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -154,7 +153,6 @@ td {
 }
 
 #stats-content td {
-  border: 1px solid black;
   border-radius: 12px;
   color: white;
   font-size: 12px;
@@ -162,8 +160,10 @@ td {
 }
 
 .progress {
-  background-color: rgba(92, 44, 10, 0.5);
+  background-color: rgba(106, 45, 2, 0.629);
   border-radius: 12px;
-  padding: 3px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 

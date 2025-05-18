@@ -3,7 +3,7 @@ let statsContent = document.getElementById('stats-content');
 let id = 1;
 
 async function init() {
-  await getPokemon(id);
+  
 }
 
 
@@ -28,3 +28,4 @@ async function getPokemon(id) {
 
 // capitalize first letter 
 let capitalize = (str) => str[0].toUpperCase() + str.slice(1);
+
