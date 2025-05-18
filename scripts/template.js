@@ -10,10 +10,11 @@ profile = (p, s) => `
     <img class="portrait" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt=""/>
     <div class="details">
     <nav>
-      <b id="about" onclick="getAbout()" class="active">About</b>
-      <b id="evo" onclick="getChain(8)">Evolution-Chain</b>
+      <b id="about" onclick="getProfile()" class="active">About</b>
+      <b id="evo" onclick="getChain()">Evolution-Chain</b>
       <b id="stats" onclick="getStats()">Stats</b>
     </nav>
+
   <div id="profile-content">
 
 
@@ -69,7 +70,8 @@ profile = (p, s) => `
       </table>
 
 
-    </div>
+  </div>
+
       <div class="arrows">
         <img onclick="prevPokemon()" src="./assets/icons/links.png" alt="links" />
         <img onclick="nextPokemon()" src="./assets/icons/rechts.png" alt="rechts" />
@@ -85,3 +87,13 @@ renderChain = (name, img, showArrow) => `
     <img src="${img}" alt="${name}" />
     <span>${capitalize(name)}</span>
   </div>${showArrow ? "&#10132" : ""}`;
+
+
+// render cards
+template = p => `
+  <div onclick="getProfile(${p.id})" class="card">
+    <h3>${capitalize(p.name)}</h3>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt="">
+    
+  </div>
+`;

@@ -37,9 +37,9 @@ header input {
 
 main {
     flex: 1;
-    justify-items: center;
-    align-content: center;
-    flex-flow: column wrap;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 footer {

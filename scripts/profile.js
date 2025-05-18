@@ -1,8 +1,16 @@
-function getAbout() {
-  getPokemon(id);
+// get pokemon response
+async function getProfile(id) {
+  try {
+    let pokemon = await fetchJSON(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    let species = await fetchJSON(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    content.innerHTML = profile(pokemon, species);
+  } catch {
+    content.innerHTML = "Es ist ein Fehler aufgetreten, bitte versuchen Sie es später."
+  }
 }
 
 
+// fill evolution chain tab
 function getChain() {
   document.getElementById("about").classList.remove("active");
   document.getElementById("stats").classList.remove("active");
@@ -10,7 +18,7 @@ function getChain() {
   loadEvolutionChain(id);
 }
 
-
+// fill stats tab
 async function getStats() {
   await getPokemon(id);
   document.getElementById("stats").classList.add("active");
@@ -20,13 +28,14 @@ async function getStats() {
   document.getElementById("stats-content").classList.remove("d-none");
 }
 
-
+// next index button
 function nextPokemon() {
   id++;
-  getPokemon(id);
+  getProfile(id);
 }
 
+// prev index button
 function prevPokemon() {
   id--;
-  getPokemon(id);
+  getProfile(id);
 }

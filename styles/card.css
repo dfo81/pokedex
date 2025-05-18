@@ -1,6 +1,7 @@
 .card {
-    height: 400px;
-    width: 250px;
+    height: 200px;
+    width: 150px;
+    margin: 12px;
     background-color: rgb(248, 248, 248);
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -9,4 +10,10 @@
 .card:hover {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.296) 0px 1px 3px 0px, rgba(0, 0, 0, 0.295) 0px 1px 2px 0px;
+}
+
+
+.card img {
+    height: 100px;
+    width: 100px;
 }
