@@ -4,6 +4,7 @@ async function loadEvolutionChain(id) {
   await renderEvolutionChain(names);
 }
 
+
 // get Names in the chain of character
 async function getEvolutionNames(id) {
   let species = await fetchJSON(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
@@ -14,6 +15,7 @@ async function getEvolutionNames(id) {
   }
   return names;
 }
+
 
 // chain only render function 
 async function renderEvolutionChain(names) {

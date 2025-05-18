@@ -1,4 +1,4 @@
-// render Profile with about tab
+// render Profile
 profile = (p, s) => `
 
 <div class="overlay">
@@ -15,18 +15,20 @@ profile = (p, s) => `
       <b id="stats" onclick="getStats()">Stats</b>
     </nav>
   <div id="profile-content">
+
+
     <table id="about-content">
       <tr>
         <th>Height</th>
-          <td>${p.height / 10} m</td>
+        <td>${p.height / 10} m</td>
       </tr>
       <tr>
         <th>Weight</th>
-          <td>${p.weight / 10} kg</td>
+        <td>${p.weight / 10} kg</td>
       </tr>
         <tr>
           <th>Abilities</th>
-            <td>${p.abilities.map(a => a.ability.name).join(", ")}</td>
+          <td>${p.abilities.map(a => a.ability.name).join(", ")}</td>
         </tr>
         <tr>
           <th>Habitat</th>
@@ -37,15 +39,40 @@ profile = (p, s) => `
           <td>${p.types.map(t => t.type.name).join(", ")}</td>
         </tr>
       </table>
+
+      
+      <table id="stats-content" class="d-none">
+        <tr>
+          <th>${p.stats[0].stat.name}</th>
+            <td><div class="progress" style="width: ${p.stats[0].base_stat}px">${p.stats[0].base_stat}</div></td>
+        </tr>
+        <tr>
+          <th>${p.stats[1].stat.name}</th>
+          <td><div class="progress" style="width: ${p.stats[1].base_stat}px">${p.stats[1].base_stat}</div></td>
+        </tr>
+        <tr>
+          <th>${p.stats[2].stat.name}</th>
+          <td><div class="progress" style="width: ${p.stats[2].base_stat}px">${p.stats[2].base_stat}</div></td>
+        </tr>
+        <tr>
+          <th>${p.stats[3].stat.name}</th>
+          <td><div class="progress" style="width: ${p.stats[3].base_stat}px">${p.stats[3].base_stat}</div></td>
+        </tr>
+        <tr>
+          <th>${p.stats[4].stat.name}</th>
+          <td><div class="progress" style="width: ${p.stats[4].base_stat}px">${p.stats[4].base_stat}</div></td>
+        </tr>
+        <tr>
+          <th>${p.stats[5].stat.name}</th>
+          <td><div class="progress" style="width: ${p.stats[5].base_stat}px">${p.stats[5].base_stat}</div></td>
+        </tr>
+      </table>
+
+
     </div>
-    <table id="stats-content">
-      <tr>
-        <td>${p.stats.map(s => s.stat.name)}</td>
-      </tr>
-    </table>
       <div class="arrows">
-        <img onclick="prevIndex()" src="./assets/icons/links.png" alt="links" />
-        <img onclick="nextIndex()" src="./assets/icons/rechts.png" alt="rechts" />
+        <img onclick="prevPokemon()" src="./assets/icons/links.png" alt="links" />
+        <img onclick="nextPokemon()" src="./assets/icons/rechts.png" alt="rechts" />
       </div>
     </div>
   </div>

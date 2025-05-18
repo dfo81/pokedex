@@ -1,4 +1,5 @@
 let content = document.getElementById("content");
+let statsContent = document.getElementById('stats-content');
 
 
 function init() {
