@@ -78,8 +78,10 @@ template = (p, s) => `
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt="">
     <div class="type-icon">
       ${p.types.map(t =>  `
-      <div>
-        <img title="${t.type.name}" src="./assets/icons/${t.type.name}.svg" alt="${t.type.name}">`).join(" ")
+      <div class="tooltip">
+        <img src="./assets/icons/${t.type.name}.svg" alt="${t.type.name}"><div class="tooltiptext">${t.type.name}</div>
+      </div> 
+        `).join(" ")
       }
     </div>
   </div>

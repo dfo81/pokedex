@@ -40,13 +40,12 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: black;
+  background-color: gray;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -55,8 +54,8 @@
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  top: -5px;
-  left: 105%;
+  top: -50%;
+  left: -50%;
 }
 
 .tooltip:hover .tooltiptext {
