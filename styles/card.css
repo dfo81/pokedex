@@ -1,19 +1,64 @@
 .card {
-    height: 200px;
-    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 250px;
+    width: 180px;
     margin: 12px;
-    background-color: rgb(248, 248, 248);
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    transition: ease-in 0.15s;
+    color: rgb(100, 87, 78);
 }
 
 .card:hover {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.296) 0px 1px 3px 0px, rgba(0, 0, 0, 0.295) 0px 1px 2px 0px;
+    scale: 1.02;
 }
 
 
 .card img {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 140px;
+    filter: drop-shadow(5px 5px 5px rgb(109, 109, 109));
+}
+
+.type-icon {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 12px;
+}
+
+.type-icon img {
+    height: 36px;
+    width: 36px;
+    filter: drop-shadow(1px 2px 3px rgb(109, 109, 109));
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

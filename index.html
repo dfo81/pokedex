@@ -14,18 +14,20 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Pokedex</title>
   </head>
-  <body onclick="closeOverlay()" onload="init()">
+  <body onload="init()">
 
     <header>
       <div class="header-box">
         <img src="./img/fontbolt.png" alt="pokedex" />
-        <input type="search" placeholder="pokemon suchen" />
+        <input type="search" placeholder="pokemon suchen" onchange="serachPokemon()"/>
       </div>
     </header>
 
     <main id="content">
       
     </main>
+
+    <button class="morePokemon" onclick="getPokemon()">more pokemon</button>
 
     <footer>
       <div class="impressum">

@@ -10,9 +10,9 @@ profile = (p, s) => `
     <img class="portrait" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt=""/>
     <div class="details">
     <nav>
-      <b id="about" onclick="getProfile()" class="active">About</b>
-      <b id="evo" onclick="getChain()">Evolution-Chain</b>
-      <b id="stats" onclick="getStats()">Stats</b>
+      <b id="about" onclick="getProfile(${p.id})" class="active">About</b>
+      <b id="evo" onclick="getChain(${p.id})">Evolution-Chain</b>
+      <b id="stats" onclick="getStats(${p.id})">Stats</b>
     </nav>
 
   <div id="profile-content">
@@ -43,38 +43,20 @@ profile = (p, s) => `
 
       
       <table id="stats-content" class="d-none">
+      ${p.stats.map(s => ` 
         <tr>
-          <th>${p.stats[0].stat.name}</th>
-          <td><div class="progress" style="width: ${p.stats[0].base_stat}px">${p.stats[0].base_stat}</div></td>
-        </tr>
-        <tr>
-          <th>${p.stats[1].stat.name}</th>
-          <td><div class="progress" style="width: ${p.stats[1].base_stat}px">${p.stats[1].base_stat}</div></td>
-        </tr>
-        <tr>
-          <th>${p.stats[2].stat.name}</th>
-          <td><div class="progress" style="width: ${p.stats[2].base_stat}px">${p.stats[2].base_stat}</div></td>
-        </tr>
-        <tr>
-          <th>${p.stats[3].stat.name}</th>
-          <td><div class="progress" style="width: ${p.stats[3].base_stat}px">${p.stats[3].base_stat}</div></td>
-        </tr>
-        <tr>
-          <th>${p.stats[4].stat.name}</th>
-          <td><div class="progress" style="width: ${p.stats[4].base_stat}px">${p.stats[4].base_stat}</div></td>
-        </tr>
-        <tr>
-          <th>${p.stats[5].stat.name}</th>
-          <td><div class="progress" style="width: ${p.stats[5].base_stat}px">${p.stats[5].base_stat}</div></td>
-        </tr>
+          <th>${s.stat.name}</th>
+          <td><div class="progress" style="width: ${s.base_stat}px">${s.base_stat}</div></td>
+        </tr>`).join(" ")
+      }
       </table>
 
 
   </div>
 
       <div class="arrows">
-        <img onclick="prevPokemon()" src="./assets/icons/links.png" alt="links" />
-        <img onclick="nextPokemon()" src="./assets/icons/rechts.png" alt="rechts" />
+        <img onclick="prevPokemon(${p.id})" src="./assets/icons/links.png" alt="links" />
+        <img onclick="nextPokemon(${p.id})" src="./assets/icons/rechts.png" alt="rechts" />
       </div>
     </div>
   </div>
@@ -90,10 +72,15 @@ renderChain = (name, img, showArrow) => `
 
 
 // render cards
-template = p => `
-  <div onclick="getProfile(${p.id})" class="card">
-    <h3>${capitalize(p.name)}</h3>
+template = (p, s) => `
+  <div onclick="getProfile(${p.id})" class="card ${s.color.name}">
+    <h2>${capitalize(p.name)}</h2>
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt="">
-    
+    <div class="type-icon">
+      ${p.types.map(t =>  `
+      <div>
+        <img title="${t.type.name}" src="./assets/icons/${t.type.name}.svg" alt="${t.type.name}">`).join(" ")
+      }
+    </div>
   </div>
 `;

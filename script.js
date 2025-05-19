@@ -4,11 +4,11 @@ let offset = 1;
 let limit = 24;
 
 async function init() {
-  getPokemon(limit);
+  getPokemon();
 }
 
 // get pokemon response
-async function getPokemon(id) {
+async function getPokemon() {
   for (let id = offset; id < offset + limit; id++) {
     try {
       let pokemon = await fetchJSON(`https://pokeapi.co/api/v2/pokemon/${id}`);

@@ -28,6 +28,7 @@ header, footer {
 
 header img {
     height: 100px;
+    filter: drop-shadow(1px 1px 5px orange);
 }
 
 header input {
@@ -38,8 +39,28 @@ header input {
 main {
     flex: 1;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
+    max-width: 1440px;
+    margin: auto;
     justify-content: center;
+    align-content: center;
+}
+
+button {
+    cursor: pointer;
+    width: 200px;
+    height: 56px;
+    align-self: center;
+    margin-bottom: 12px;
+    font-size: 24px;
+    background-color: #b1d4f7;
+    border: #b1d4f7;
+    border-radius: 12px;
+    transition: ease 0.5s;
+}
+
+button:hover {
+    scale: 1.05;
 }
 
 footer {

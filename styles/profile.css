@@ -40,6 +40,7 @@
   z-index: 3;
   height: 55%;
   border-radius: 0 0 24px 24px;
+  font-size: 20px;
   width: 100%;
   justify-items: center;
   background-color: rgb(240, 240, 240);
@@ -54,14 +55,14 @@
   top: 60px;
   z-index: 4;
   height: 300px;
-  width: 480px;
+  width: 400px;
   filter: drop-shadow(5px 5px 5px rgb(80, 80, 80));
 }
 
 nav {
   justify-content: space-around;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   display: flex;
   width: 90%;
   margin-top: 48px;
