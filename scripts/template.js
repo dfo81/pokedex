@@ -1,7 +1,6 @@
 // render Profile
 profile = (p, s) => `
 
-<div class="overlay">
   <div class="profile ${s.color.name}">
     <div class="profile-title">
       <h2>${capitalize(p.name)}</h2>
@@ -60,7 +59,7 @@ profile = (p, s) => `
       </div>
     </div>
   </div>
-</div>`;
+`;
 
 
 // render chain in to Profile
@@ -73,7 +72,7 @@ renderChain = (name, img, showArrow) => `
 
 // render cards
 template = (p, s) => `
-  <div onclick="getProfile(${p.id})" class="card ${s.color.name}">
+  <div onclick="getOverlay(${p.id})" class="card ${s.color.name}">
     <h2>${capitalize(p.name)}</h2>
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt="">
     <div class="type-icon">
