@@ -114,11 +114,11 @@ th {
     min-width: 150px;
     height: 24px;
     text-align: left;
+    padding-right: 24px;
 }
 
 td {
-    padding-left: 24px;
-    width: 200px;
+    width: 150px;
 }
 
 .member {
@@ -141,9 +141,9 @@ td {
 #stats-content td {
   border-radius: 12px;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
   height: 10px;
-  justify-content: space-between;
+  background-color: rgb(214, 214, 214);
 }
 
 .progress {

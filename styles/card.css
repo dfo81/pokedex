@@ -18,6 +18,9 @@
     scale: 1.02;
 }
 
+.card h2 {
+  margin-bottom: 0;
+}
 
 .card img {
     height: 120px;
