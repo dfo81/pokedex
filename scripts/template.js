@@ -57,7 +57,7 @@ about = (p, s) => `
     </tr>
     <tr>
       <th>Habitat</th>
-      <td>${s.habitat.name}</td>
+      <td>${s.habitat?.name || "uknown"}</td>
     </tr>
     <tr>
       <th>Abilities</th>

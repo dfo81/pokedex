@@ -23,9 +23,3 @@ async function getPokemon() {
   offset += limit;
   document.getElementById('spinner').classList.add('d-none');
 }
-
-async function getAllPokemon() {
-  for (let i = 0; i < pokemon.length; i++) {
-    let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then(p => p.json());
-  }
-}
