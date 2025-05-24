@@ -1,17 +1,26 @@
 
-// capitalize first letter
-let capitalize = (str) => str[0].toUpperCase() + str.slice(1);
 let content = document.getElementById('content');
 let offset = 1;
 let limit = 24;
 let allLoadedPokemon = [];
 
-function init() {
-    getPokemon();
+
+// capitalize first letter
+let capitalize = (str) => str[0].toUpperCase() + str.slice(1);
+
+
+// initian function
+async function init() {
+  document.getElementById('spinner').classList.remove('d-none');
+  document.body.style.overflow += "hidden";
+  await getPokemon();
+  document.getElementById('spinner').classList.add('d-none');
+  document.body.style.overflow = "";
 }
 
+
+// fetch pokemon data
 async function getPokemon() {
-  document.getElementById('spinner').classList.remove('d-none');
   for (let id = offset; id < offset + limit; id++) {
     try {
       let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(p => p.json());
@@ -23,11 +32,10 @@ async function getPokemon() {
     }
   }
   offset += limit;
-  document.getElementById('spinner').classList.add('d-none');
 }
 
 
-
+// search loaded pokemons
 function searchPokemon() {
   let query = document.getElementById('search').value.toLowerCase();
   if (query.length < 3) {
@@ -40,6 +48,8 @@ function searchPokemon() {
   content.innerHTML = filtered.map(({ pokemon, species }) => template(pokemon, species)).join('');
 }
 
+
+// render search function
 function renderAllLoadedPokemon() {
   content.innerHTML = allLoadedPokemon.map(({ pokemon, species }) => template(pokemon, species)).join('');
 }

@@ -1,9 +1,13 @@
+
+// display profile overlay
 function displayProfile(id) {
     document.getElementById('overlay').classList.remove('d-none');
     document.body.style.overflow += "hidden";
     getProfile(id);
 }
 
+
+// close profile overlay
 function closeProfile() {
     document.getElementById('overlay').classList.add('d-none');
     document.body.style.overflowY = "";    
@@ -20,17 +24,23 @@ async function getProfile(id) {
     document.getElementById('profile').classList.add(species.color.name);
 }
 
+
+// previous pokemon
 function prevId() {
     let id = currentProfileId > 1 ? currentProfileId - 1 : 1025;
     getProfile(id);
 }
 
+
+// next ppkemon
 function nextId() {
     let id = currentProfileId < 1025 ? currentProfileId + 1 : 1;
     getProfile(id);
 }
 
+
 // switch tabs
+// about tab
 function getAbout(){
     document.getElementById('about').classList.add('active');
     document.getElementById('evo').classList.remove('active');
@@ -41,6 +51,8 @@ function getAbout(){
     document.getElementById('stats-content').classList.add('d-none');
 }
 
+
+// evo chain tab
 function getEvoChain() {
     document.getElementById('about').classList.remove('active');
     document.getElementById('evo').classList.add('active');
@@ -51,6 +63,8 @@ function getEvoChain() {
     document.getElementById('stats-content').classList.add('d-none');
 }
 
+
+// stats tab
 function getStats() {
     document.getElementById('about').classList.remove('active');
     document.getElementById('evo').classList.remove('active');

@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="./styles/profile.css" />
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/card.css">
+    <link rel="stylesheet" href="./styles/impressum.css">
     <link
       rel="shortcut icon"
       href="./assets/icons/favicon.png"
       type="image/x-icon"
     />
+    <script src="./scripts/evolution.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/profile.js"></script>
     
   </head>
   <body onload="init()">
@@ -37,11 +41,15 @@
     <main id="content">
       <!-- Card´s -->
     </main>
-     <button class="morePokemon" onclick="getPokemon()">more pokemon</button>
-    <footer></footer>
+     <button class="morePokemon" onclick="init()">more pokemon</button>
+    <footer>
+      <div class="impressum-box">
+        <a href="https://x.com/"><img src="./assets/icons/twitter.png" alt="twitter"></a>
+        <a href="./impressum.html">impressum</a>
+        <a href="https://github.com/dfo81"><img src="./assets/icons/github.png" alt="github"></a>
+      </div>
+    </footer>
     <script src="script.js"></script>
-    <script src="./scripts/evolution.js"></script>
-    <script src="./scripts/template.js"></script>
-    <script src="./scripts/profile.js"></script>
+    
   </body>
 </html>
