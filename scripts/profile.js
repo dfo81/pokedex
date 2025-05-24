@@ -1,63 +1,62 @@
-
-function getOverlay(id) {
-  document.body.style.overflow = "hidden";
-  document.getElementById('overlay').classList.remove('d-none');
-  getProfile(id);
-  event.stopPropagation();
+function displayProfile(id) {
+    document.getElementById('overlay').classList.remove('d-none');
+    document.body.style.overflow += "hidden";
+    getProfile(id);
 }
 
-// get pokemon response
+function closeProfile() {
+    document.getElementById('overlay').classList.add('d-none');
+    document.body.style.overflowY = "";    
+}
+
+
+// fetch name, id, color and picture for profile
 async function getProfile(id) {
-  try {
-    let pokemon = await fetchJSON(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    let species = await fetchJSON(
-      `https://pokeapi.co/api/v2/pokemon-species/${id}`
-    );
-    document.getElementById('overlay').innerHTML = profile(pokemon, species);
-  } catch {
-    content.innerHTML =
-      "Es ist ein Fehler aufgetreten, bitte versuchen Sie es später.";
-  }
-  event.stopPropagation();
+    currentProfileId = id;
+    let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(r => r.json());
+    let species = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then(s => s.json());
+    document.getElementById('profile').innerHTML = profile(pokemon, species);
+    document.getElementById('profile').className = "";
+    document.getElementById('profile').classList.add(species.color.name);
 }
 
-// fill evolution chain tab
-function getChain(id) {
-  document.getElementById("about").classList.remove("active");
-  document.getElementById("stats").classList.remove("active");
-  document.getElementById("evo").classList.add("active");
-  loadEvolutionChain(id);
-  event.stopPropagation();
+function prevId() {
+    let id = currentProfileId > 1 ? currentProfileId - 1 : 1025;
+    getProfile(id);
 }
 
-// fill stats tab
-async function getStats(id) {
-  await getProfile(id);
-  document.getElementById("stats").classList.add("active");
-  document.getElementById("evo").classList.remove("active");
-  document.getElementById("about").classList.remove("active");
-  document.getElementById("about-content").classList.add("d-none");
-  document.getElementById("stats-content").classList.remove("d-none");
-  event.stopPropagation();
+function nextId() {
+    let id = currentProfileId < 1025 ? currentProfileId + 1 : 1;
+    getProfile(id);
 }
 
-// next index button
-function nextPokemon(id) {
-  id++;
-  getProfile(id);
-  event.stopPropagation();
+// switch tabs
+function getAbout(){
+    document.getElementById('about').classList.add('active');
+    document.getElementById('evo').classList.remove('active');
+    document.getElementById('stats').classList.remove('active');
+
+    document.getElementById('about-content').classList.remove('d-none');
+    document.getElementById('chain-content').classList.add('d-none');
+    document.getElementById('stats-content').classList.add('d-none');
 }
 
-// prev index button
-function prevPokemon(id) {
-  id--;
-  getProfile(id);
-  event.stopPropagation();
+function getEvoChain() {
+    document.getElementById('about').classList.remove('active');
+    document.getElementById('evo').classList.add('active');
+    document.getElementById('stats').classList.remove('active');
+
+    document.getElementById('about-content').classList.add('d-none');
+    document.getElementById('chain-content').classList.remove('d-none');
+    document.getElementById('stats-content').classList.add('d-none');
 }
 
-function closeOverlay() {
-  document.getElementById('overlay').innerHTML = "";
-  document.body.style.overflow = "";
-  document.getElementById('overlay').classList.add('d-none');
-  event.stopPropagation();
+function getStats() {
+    document.getElementById('about').classList.remove('active');
+    document.getElementById('evo').classList.remove('active');
+    document.getElementById('stats').classList.add('active');
+
+    document.getElementById('about-content').classList.add('d-none');
+    document.getElementById('chain-content').classList.add('d-none');
+    document.getElementById('stats-content').classList.remove('d-none');
 }

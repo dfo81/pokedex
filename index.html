@@ -3,41 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/profile.css" />
+    <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/card.css">
     <link
       rel="shortcut icon"
       href="./assets/icons/favicon.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./styles/profile.css" />
-    <link rel="stylesheet" href="./styles/colors.css" />
-    <link rel="stylesheet" href="./styles/card.css">
-    <link rel="stylesheet" href="./style.css" />
-    <title>Pokedex</title>
+    
   </head>
   <body onload="init()">
-
     <header>
       <div class="header-box">
         <img src="./img/fontbolt.png" alt="pokedex" />
-        <input type="search" placeholder="pokemon suchen" onchange="serachPokemon()"/>
+        <input type="search" placeholder="search pokemon">
       </div>
     </header>
 
-    <main id="content">
-      <div onclick="closeOverlay()" id="overlay" class="overlay d-none"></div>
-    </main>
-
-    <button class="morePokemon" onclick="getPokemon()">more pokemon</button>
-
-    <footer>
-      <div class="impressum">
-        <b>Impressum</b>
+    <!-- Overlay -->
+    <div id="spinner" class="">
+      <!-- spinner overlay -->
+       <div class="spinner pokeball"></div>
+    </div>
+    <div id="overlay" onclick="closeProfile()" class="d-none">
+      <div id="profile" onclick="event.stopPropagation()">
+        <!-- Profile content -->
       </div>
-    </footer>
+    </div>
 
+    <main id="content">
+      <!-- Card´s -->
+    </main>
+     <button class="morePokemon" onclick="getPokemon()">more pokemon</button>
+    <footer></footer>
     <script src="script.js"></script>
-    <script src="./scripts/profile.js"></script>
-    <script src="./scripts/template.js"></script>
     <script src="./scripts/evolution.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/profile.js"></script>
   </body>
 </html>
