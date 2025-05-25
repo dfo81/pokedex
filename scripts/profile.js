@@ -2,7 +2,7 @@
 // display profile overlay
 function displayProfile(id) {
     document.getElementById('overlay').classList.remove('d-none');
-    document.body.style.overflow += "hidden";
+    document.body.style.overflow = "hidden";
     getProfile(id);
 }
 
@@ -25,16 +25,16 @@ async function getProfile(id) {
 }
 
 
-// previous pokemon
+// previous loaded pokemon
 function prevId() {
-    let id = currentProfileId > 1 ? currentProfileId - 1 : 1025;
+    let id = currentProfileId > 1 ? currentProfileId - 1 : allLoadedPokemon.length;
     getProfile(id);
 }
 
 
-// next ppkemon
+// next loaded ppkemon
 function nextId() {
-    let id = currentProfileId < 1025 ? currentProfileId + 1 : 1;
+    let id = currentProfileId < allLoadedPokemon.length ? currentProfileId + 1 : 1;
     getProfile(id);
 }
 

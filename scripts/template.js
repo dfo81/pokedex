@@ -14,6 +14,7 @@ template = (p, s) => `
   </div>
 `;
 
+
 // render Profile of Character
 profile = (p, s) => `
 <div class="profile-title">

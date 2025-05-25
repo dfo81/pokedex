@@ -44,14 +44,14 @@
 
   th {
     height: 10px;
-    min-width: 90px;
+    min-width: 80px;
   }
   td {
-    width: 150px;
+    width: 100px;
     height: 12px;
   }
   .member img {
-    width: 80px;
+    width: 75px;
   }
   .profile-title {
     width: 232px;
