@@ -119,6 +119,7 @@ th {
 
 td {
     width: 200px;  /* don´t change 200 ! */
+    overflow: hidden;
 }
 
 .member {
