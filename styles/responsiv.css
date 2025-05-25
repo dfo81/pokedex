@@ -1,0 +1,86 @@
+@media (max-width: 1770px) {
+  main {
+    max-width: 1300px;
+  }
+  .header-box {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1360px) {
+  main {
+    max-width: 960px;
+  }
+  .header-box {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 700px) {
+  #content {
+    gap: 0;
+  }
+  .header-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    height: 180px;
+  }
+  .card {
+    width: 150px;
+    height: 180px;
+    font-size: 14px;
+  }
+  .card img {
+    height: 55%;
+    width: 55%;
+  }
+  .type-icon img {
+    height: 24px;
+    width: 24px;
+  }
+  #profile {
+    width: 310px;
+    height: 500px;
+  }
+  .portrait {
+    height: 220px;
+  }
+  .details {
+    font-size: 12px;
+    height: 60%;
+  }
+  table {
+    width: 100px;
+  }
+  th {
+    height: 10px;
+    min-width: 90px;
+  }
+  td {
+    min-width: 120px;
+    height: 12px;
+  }
+  .member img {
+    width: 80px;
+  }
+  .profile-title {
+    width: 82.5%;
+  }
+  #stats-content td {
+  font-size: 10px;
+  height: 10px;
+  background-color: rgb(214, 214, 214);
+}
+}
+
+@media (max-width: 420px) {
+  .card {
+    font-size: 12px;
+    width: 115px;
+    height: 150px;
+    margin: 8px;
+    padding: 0;
+  }
+}
