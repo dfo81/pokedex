@@ -10,6 +10,10 @@
     color:#336699;
 }
 
+.impressum a:hover {
+    text-decoration: underline;
+}
+
 .impressum-box {
     display: flex;
     align-items: center;
