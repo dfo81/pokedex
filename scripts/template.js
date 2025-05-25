@@ -89,7 +89,7 @@ renderChain = (name, img, showArrow) => `
         ${p.stats.map(s => ` 
         <tr>
           <th>${capitalize(s.stat.name)}</th>
-          <td><div class="progress" style="width: ${s.base_stat}px">${s.base_stat}</div></td>
+          <td><div class="progress" style="width: ${s.base_stat / 200 * 125}%">${s.base_stat}</div></td>
         </tr>`).join(" ")
       }
     </table>

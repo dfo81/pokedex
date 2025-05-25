@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: sansation;
     src: url(./assets/fonts/Sansation/Sansation-Regular.ttf)
@@ -29,12 +30,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: sansation;
+    overflow-x: hidden;
 }
 
 main {
     flex: 1;
     display: flex;
     flex-flow: wrap;
+    align-self: center;
     max-width: 1800px;
     margin: auto;
     padding: 24px;
