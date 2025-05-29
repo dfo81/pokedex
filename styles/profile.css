@@ -124,7 +124,7 @@ td {
 
 .member {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
   flex-direction: column;
   color: gray;
   align-items: center;
@@ -136,7 +136,7 @@ td {
 }
 
 .member span {
-  margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 #stats-content td {
@@ -145,6 +145,11 @@ td {
   font-size: 15px;
   height: 10px;
   background-color: rgb(230, 230, 230);
+}
+
+#chain-content {
+  justify-content: space-between;
+  width: 450px;
 }
 
 .progress {

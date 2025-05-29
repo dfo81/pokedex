@@ -76,7 +76,7 @@ about = (p, s) => `
 `;
 
 
-// render chain in to Profile
+// render evolution-chain in to Profile
 renderChain = (name, img, showArrow) => `
   <div class="member">
     <img src="${img}" alt="${name}" />
