@@ -61,10 +61,10 @@ async function searchPokemon() {
   }
 
   let filtered = allPokemonList
-    .filter(p => p.name.toLowerCase().startsWith(query)) // <- Nur Anfangsbuchstaben
+    .filter(p => p.name.toLowerCase().startsWith(query))
     .slice(0, 24);
 
-  content.innerHTML = `<p>Suche ${filtered.length} Pokémon...</p>`;
+  content.innerHTML = `<p>Suche nach Pokémon...</p>`;
 
   currentRenderedPokemon = [];
   for (let poke of filtered) {

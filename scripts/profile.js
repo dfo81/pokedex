@@ -34,7 +34,7 @@ function prevId() {
 
 // next loaded ppkemon
 function nextId() {
-    let id = currentProfileId < allLoadedPokemon.length ? currentProfileId + 1 : 1;
+    let id = currentProfileId < 1025 ? currentProfileId + 1 : 1;
     getProfile(id);
 }
 
