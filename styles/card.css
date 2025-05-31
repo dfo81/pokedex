@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 250px;
     width: 180px;
     margin: 12px;
@@ -30,8 +30,8 @@
 
 .type-icon {
     display: flex;
-    gap: 24px;
-    padding-bottom: 12px;
+    gap: 12px;
+    margin: 12px;
 }
 
 .type-icon img {

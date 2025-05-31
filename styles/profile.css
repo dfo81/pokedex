@@ -87,7 +87,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .arrow {
@@ -110,16 +110,33 @@
     cursor: pointer;
 }
 
-th {
-    min-width: 150px;
-    height: 24px;
-    text-align: left;
-    padding-right: 24px;
+table {
+  width: 400px;
+  margin-top: 6px;
 }
 
-td {
-    width: 200px;  /* don´t change 200 ! */
+th {
+  height: 32px;
+  width: 130px;
+}
+
+#about-content th {
+    text-align: left;
+}
+
+#about-content td {
+    width: 250px; 
     overflow: hidden;
+}
+
+#chain-content {
+  width: 450px;
+}
+
+#stats-content th {
+  width: 180px;
+  padding-right: 24px;
+  text-align: right;
 }
 
 .member {
@@ -142,14 +159,7 @@ td {
 #stats-content td {
   border-radius: 12px;
   color: white;
-  font-size: 15px;
-  height: 10px;
   background-color: rgb(230, 230, 230);
-}
-
-#chain-content {
-  justify-content: space-between;
-  width: 450px;
 }
 
 .progress {

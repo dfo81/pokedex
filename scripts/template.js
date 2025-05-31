@@ -2,7 +2,7 @@
 template = (p, s) => `
   <div onclick="displayProfile(${p.id})" class="card ${s.color.name}">
     <h2>${capitalize(p.name)}</h2>
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${p.id}.svg" alt="">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${p.id}.png" alt="">
     <div class="type-icon">
       ${p.types.map(t =>  `
       <div class="tooltip">

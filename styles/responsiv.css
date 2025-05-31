@@ -35,20 +35,15 @@
     height: 500px;
   }
   .portrait {
-    height: 220px;
+    margin-top: 12px;
+    height: 210px;
   }
   .details {
     font-size: 12px;
-    height: 60%;
+    height: 55%;
   }
-
-  th {
-    height: 10px;
-    min-width: 80px;
-  }
-  td {
-    width: 100px;
-    height: 12px;
+  .details nav {
+    margin-top: 24px;
   }
   .member img {
     width: 75px;
@@ -56,15 +51,26 @@
   .profile-title {
     width: 232px;
   }
-  #stats-content td {
-    font-size: 10px;
-    max-width: 100px;
-    height: 10px;
-    background-color: rgb(214, 214, 214);
+  .details-content {
+    width: 220px;
+  }
+  th {
+    height: 14px;
+  }
+  #about-content th {
+    width: 85px;
   }
   #chain-content {
+    width: 95%;
     justify-content: center;
-    width: 220px;
+  }
+  #stats-content th {
+    width: 100px;
+    padding-right: 6px;
+  }
+  #stats-content td {
+    font-size: 10px;
+    height: 10px;
   }
 }
 
