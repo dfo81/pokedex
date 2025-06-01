@@ -1,4 +1,1 @@
-Hallo,
-
-das ist ein Lernprojekt der Developer Akademie.
-
+<h2>A practice project of developer academy!</h2>
