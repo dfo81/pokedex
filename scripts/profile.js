@@ -1,3 +1,5 @@
+let currentProfileId = null;
+
 
 // display profile overlay
 function displayProfile(id) {
@@ -17,24 +19,25 @@ function closeProfile() {
 // fetch name, id, color and picture for profile
 async function getProfile(id) {
     currentProfileId = id;
-    let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(r => r.json());
-    let species = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then(s => s.json());
-    document.getElementById('profile').innerHTML = profile(pokemon, species);
-    document.getElementById('profile').className = "";
-    document.getElementById('profile').classList.add(species.color.name);
+    let { pokemon, species } = await fetchPokemon(id);
+    if (currentProfileId !== id) return;
+    let box = document.getElementById('profile');
+    box.innerHTML = profile(pokemon, species);
+    box.className = species.color.name;
+    loadEvolutionChain(id);
 }
 
 
 // previous loaded pokemon
 function prevId() {
-    let id = currentProfileId > 1 ? currentProfileId - 1 : allLoadedPokemon.length;
+    let id = currentProfileId > 1 ? currentProfileId - 1 : maxPokemon;
     getProfile(id);
 }
 
 
 // next loaded ppkemon
 function nextId() {
-    let id = currentProfileId < 1025 ? currentProfileId + 1 : 1;
+    let id = currentProfileId < maxPokemon ? currentProfileId + 1 : 1;
     getProfile(id);
 }
 

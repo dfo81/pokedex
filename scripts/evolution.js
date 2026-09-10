@@ -1,13 +1,20 @@
 // Load Profile 
 async function loadEvolutionChain(id) {
+  let box = document.getElementById('chain-content');
+  if (!box) return;
+  box.innerHTML = "";
   let names = await getEvolutionNames(id);
-  await renderEvolutionChain(names);
+  let members = await Promise.all(names.map(fetchChainMember));
+  if (currentProfileId !== id) return;
+  box.innerHTML = renderEvolutionChain(names, members);
 }
 
 
 // get Names in the chain of character
 async function getEvolutionNames(id) {
-  let species = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then(s => s.json());
+  let cached = pokemonCache.get(id);
+  let species = cached ? cached.species
+    : await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then(s => s.json());
   let chain = await fetch(species.evolution_chain.url).then(c => c.json());
   let names = [];
   for (let current = chain.chain; current; current = current.evolves_to[0]) {
@@ -17,14 +24,19 @@ async function getEvolutionNames(id) {
 }
 
 
+// load one member of the chain
+function fetchChainMember(name) {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+    .then(d => d.json())
+    .catch(() => null);
+}
+
+
 // chain only render function 
-async function renderEvolutionChain(names) {
-  let profileContent = document.getElementById('chain-content');
-  profileContent.innerHTML = "";  
-  for (let i = 0; i < names.length; i++) {
-    let name = names[i];
-    let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then(d => d.json());
-    let isLast = i === names.length - 1;
-    profileContent.innerHTML += renderChain(name, data.sprites.other.home.front_default, !isLast);
-  }
+function renderEvolutionChain(names, members) {
+  return members
+    .map((data, i) => data
+      ? renderChain(names[i], data.sprites.other.home.front_default, i !== names.length - 1)
+      : "")
+    .join("");
 }

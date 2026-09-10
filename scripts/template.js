@@ -1,8 +1,8 @@
 // render card´s
 template = (p, s) => `
-  <div onclick="displayProfile(${p.id})" class="card ${s.color.name}">
+  <div onclick="displayProfile(${p.id})" class="card ${s.color.name}" style="order: ${p.id}">
     <h2>${capitalize(p.name)}</h2>
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${p.id}.png" alt="">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${p.id}.png" alt="${capitalize(p.name)}" loading="lazy" decoding="async">
     <div class="type-icon">
       ${p.types.map(t =>  `
       <div class="tooltip">
@@ -32,7 +32,7 @@ profile = (p, s) => `
         ${about(p, s)}
     </div>
     <div id="chain-content" class="details-content d-none">
-        ${loadEvolutionChain(p.id)}
+        <!-- filled by loadEvolutionChain() after this template is inserted -->
     </div>
     <div id="stats-content" class="details-content d-none">
         ${stats(p)}
